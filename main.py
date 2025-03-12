@@ -1,6 +1,6 @@
+from random import *
 nombreVendedor=None 
 productos=[]
-producto={}
 
 opcion=100
 
@@ -17,24 +17,33 @@ while opcion != 5:
         print("Bienvenido a la creacion de tu lista de mercado")
         
         #creando claves y valores de un diccionario
-        producto["id"]=5
-        producto["nombre"]=input("Digita el nombre del producto: ")
-        producto["precio"]=int(input("Digita el precio del producto: "))
-        producto["cantidad"]=int(input("Cuantos elementos de este producto vas a llevar: "))
-        producto["presentacion"]=input("Cual presentacion llevaras? ")
-        
+        producto={
+        "id":randint(0,1000), 
+        "nombre":input("Digita el nombre del producto: "),
+        "precio":int(input("Digita el precio del producto: ")),
+        "cantidad":int(input("Cuantos elementos de este producto vas a llevar: ")),
+        "presentacion":input("Cual presentacion llevaras? ")
+        }
         #mostrando mi diccionario
         #print(producto)
         
         #poblando una lista (agrgando elementos a una lista)
         productos.append(producto)
-        print(productos)
+        print(producto)
         
         
         
     elif opcion==2:
-        print("estoy en la 2")
+        #utilizando ciclos for para recorrer listas
+        for product in productos:
+            print (product["nombre"])
     elif opcion==3:
+        #1.encontrar elemento
+        for product in productos:
+            print(product["id"]+["nombre"])
+        #2.seleccion elemento
+        
+        #3.acceder a la propiedad y editarla
         print("estoy en la 3")
     elif opcion==4:
         print("estoy en la 4")
